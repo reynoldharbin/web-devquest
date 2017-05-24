@@ -42,7 +42,7 @@ padding: 0px;
     height: 20px;
     padding: 10px 5px;
     float: left;
-    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    font: bold 15px 'proxima nova', 'lucida sans', 'Tahoma';
     border: 0;
     background: #eee;
     border-radius: 3px 0 0 3px;
@@ -82,12 +82,11 @@ padding: 0px;
     cursor: pointer;
     height: 40px;
     width: 110px;
-    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
-    color: #fff;
+    font: bold 15px/40px 'proxima nova', 'lucida sans', 'Tahoma';
+    color: #07841e;
     text-transform: uppercase;
     background: #71ef94;
     border-radius: 0 3px 3px 0;
-    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
 }
 
 .form-wrapper button:hover{
@@ -96,7 +95,7 @@ padding: 0px;
 
 .form-wrapper button:active,
 .form-wrapper button:focus{
-    background: #c42f2f;
+    background: #56d679;
 	outline: 0;
 }
 
@@ -124,6 +123,7 @@ padding: 0px;
 
 .tagline {
     color: #fff;
+    font: 'proxima nova', 'lucida sans', 'Tahoma';
 }
 
 .header-image img {
