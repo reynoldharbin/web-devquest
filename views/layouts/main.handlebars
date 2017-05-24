@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>doFindMe - find developers</title>
+
+        <meta name="description" content="DigitalOcean find me" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="/assets/css/main.css" /> 
+
+    </head>
+    <body id="top">
+        <!-- Header -->
+            <header id="header">
+                <div class="content">
+                    
+                	<!-- Menu Nav - START - RMH-HERE-99-NOW  -->
+	            	<div class="dropdown">
+	            		<div align="right">
+							<button onclick="myFunction()" class="dropbtn">Menu</button>
+							  <div id="myDropdown" class="dropdown-content">
+							    <a href="http://www.dofind.me/">Home</a>
+							    <a href="http://www.dofind.me/credits">Credits</a>
+							    <a href="mailto:info@dofind.me">Contact</a>
+							  </div>
+					  	</div>
+					</div>
+	            	<!-- Menu Nav - END -->
+
+                	<!-- Header Image   -->
+                    <div align="left">
+	                    <a href="#">
+	                    	<div class="header-image"><img src="/images/searchSammy.svg"></div> 
+	                    </a>
+                    <p>The easiest way to find developers talking about the things you care about<br/></p>
+                	</div>
+
+            </header>
+
+        <!-- Body -->
+        <div>
+            {{{ body }}}
+        </div>
+
+        <!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    <li><a href="https://twitter.com/digitalocean" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                </ul>
+                <p class="copyright">&copy; <a href="http://www.digitalocean.com"> DigitalOcean LLC.</a> <br></p>
+            </footer>
+
+        <!-- Scripts -->
+            <!-- Drop Down Menu START -->
+            <script>
+			/* When the user clicks on the button, 
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			    document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+			  if (!event.target.matches('.dropbtn')) {
+
+			    var dropdowns = document.getElementsByClassName("dropdown-content");
+			    var i;
+			    for (i = 0; i < dropdowns.length; i++) {
+			      var openDropdown = dropdowns[i];
+			      if (openDropdown.classList.contains('show')) {
+			        openDropdown.classList.remove('show');
+			      }
+			    }
+			  }
+			}
+			</script>
+            <!-- Drop Down Menu END -->
+
+
+            <!-- Google Analytics START -->
+            <!-- Google Analytics END -->
+
+    </body>
+</html>

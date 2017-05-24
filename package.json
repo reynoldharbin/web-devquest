@@ -1,0 +1,20 @@
+{
+  "name": "dofindme-web",
+  "version": "1.0.0",
+  "description": "Web app to accept search input for the dofindme app",
+  "main": "findme-web.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "moment": "^2.18.1",
+    "promise": "^7.1.1",
+    "request": "^2.81.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "hello"
+  },
+  "author": "Reynold Harbin",
+  "license": "UNLICENSED"
+}
