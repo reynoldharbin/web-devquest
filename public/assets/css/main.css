@@ -2,7 +2,11 @@ body {
 font-family: 'Roboto', sans-serif;
 }
 .header-image img {
-    
+
+.header-bg {
+  background-image:url('../images/top-bg.jpg');
+}
+
 }
 footer {
     margin-top:100px;

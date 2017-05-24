@@ -8,15 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/main.css" /> 
+        <link rel="stylesheet" href="/assets/css/main.css" />
 
     </head>
     <body id="top">
         <!-- Header -->
             <header id="header">
                 <div class="content">
-                    
-                    <!-- Menu Nav  
+
+                    <!-- Menu Nav
                     <div class="dropdown">
                         <div align="right">
                             <button onclick="myFunction()" class="dropbtn">Menu</button>
@@ -28,18 +28,20 @@
                     </div>
 -->
                     <!-- Header Image   -->
-                    <div align="center">
+                    <div class="header-bg">
+                      <div align="center">
                         <a href="#">
-                            <div class="header-image"><a href="/"><img src="/images/devquest.png"></a></div> 
+                            <div class="header-image"><a href="/"><img src="/images/devquest.png"></a></div>
                         </a>
                         <form id='form' action='/search' method='GET'>
-                            
+
                             <input name="searchsite" id="searchsite" type="hidden" />
                             <label align="left">Search Term <span id='search_term_Label'></span></label>
                             <input name="searchterm" id="searchterm" type="" />
                               <button style="padding: 0px 20px;">Search</button>
                         </form>
                     </div>
+                  </div>
             </header>
 
         <!-- Body -->
@@ -57,7 +59,7 @@
         <!-- Scripts -->
             <!-- Drop Down Menu START -->
             <script>
-            /* When the user clicks on the button, 
+            /* When the user clicks on the button,
             toggle between hiding and showing the dropdown content */
             function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
