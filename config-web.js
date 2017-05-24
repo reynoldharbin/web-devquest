@@ -17,7 +17,7 @@ exports.build  = {
 }
 
 exports.settings  = {
-  prodAPIUrl: "http://dofind.me:3000/search", //PRODUCTION
+  prodAPIUrl: "http://api.devquest.io:3000/search", //PRODUCTION
   devAPIUrl: "http://localhost:3000/search" //DEVELOPMENT
 }
 

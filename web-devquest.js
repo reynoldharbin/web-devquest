@@ -15,7 +15,7 @@ var config = require('./config-web.js');
 var actions = require('./actions-web.js');
 
 //variables
-var logTag = "findme-web.js:";
+var logTag = "web-devquest.js:";
 
 if (config.build.forProduction) {
 	console.log(logTag + "initializing for development environment.");
@@ -31,7 +31,7 @@ app.set('view engine', 'handlebars');
 
 //GET index
 app.get('/', function(req, res){
-	if (req.headers.host == 'api.dofind.me' ) {
+	if (req.headers.host == 'api.devquest.io' ) {
 		console.log(logTag+"api.dofind.me, rendering index page.  header:"+req.headers.host);
 		res.render('index');
 	} else {
@@ -87,40 +87,44 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	        'X-Application-Id': config.apikeys.doFindMeAppId,  //future
 	        'X-REST-API-Key': config.apikeys.doFindMeClientAppId //future
 	    	},
-	    body: '{"searchterm":"AWS EC2 Security Groups", "searchsite":"stub", "searchsitearray":"[stub]"}' //Set the body as a string
+	    body: '{"searchterm":"AWS EC2 Security Groups", "searchsite":"github", "searchsitearray":"[github]"}' //Set the body as a string
 
 	    // -d '{"searchterm":"AWS EC2 Security Groups", "searchsite":"github"}' http://localhost:3000/search
 
 
 	}, function(error, response, body){
 		if (error){
-			console.log(logTag+"search:unable to search" +searchsite+ " with error:"+JSON.stringify(error));
+			console.log(logTag+"search:unable to search with error:"+JSON.stringify(error));
 			res.render('error'); 
 		} else {
 			
 			var responseStatusCode = response.statusCode;
 			var responseHeaders = response.headers;
-			console.log("ZOO:1:"+logTag+"search:with  body:"+body);
-
 			var bodyObject = JSON.parse(body);
-			console.log("ZOO:2:"+logTag+"search:with body.totalResults:"+bodyObject.totalResults);
+			console.log("ZOO:0:"+logTag+"search:with body.searchTerm:"+bodyObject.searchTerm);
+			console.log("ZOO:1:"+logTag+"search:with body.totalResultsCount:"+bodyObject.totalResultsCount);
+			console.log("ZOO:2:"+logTag+"search:with body.itemsReturnedCount:"+bodyObject.itemsReturnedCount);
+			//console.log("ZOO:3:"+logTag+"search:with body:"+body);
 
-			//set up variables to send into the view
-			var sterm = body.searchterm, 
-				stotalresults = bodyObject.totalResults, 
+			//set up variables to send into the view //RMH-HERE-99-NOW
+			var sterm = body.searchTerm, 
+				ssite = "github",
+				stotalResultsCount = bodyObject.totalResultsCount,
+				sreturnedReturnedCount = bodyObject.itemsReturnedCount,  
 				sresultsperpage = bodyObject.resultsPerPage,
-				ssite = "placeholder search site",
+				
 				stotalpages = bodyObject.totalPages,
 				scurrentpage = bodyObject.currentPage, 
-				sresultsarray = bodyObject.stubResultsArray;
+				sresultsarray = bodyObject.resultsArray;
 
 			if (body) {
 				//check resultsMeta //meta about the results, like searchSite, searchTerm, resultsAvailable
 				res.render('results', { //generate eventfullUserConfirmed.html
 					searchTerm: sterm,
 					searchSite: ssite,
-					totalResults: stotalresults,
-					searchResultArray: JSON.stringify(sresultsarray)
+					totalResults: stotalResultsCount,
+					returnedResults: sreturnedReturnedCount,
+					resultsArray: sresultsarray
 
 
 				});

@@ -6,10 +6,33 @@
 				<p>DO results page looking for sammy
 
 
-				passed search term: {{ searchTerm }} <br>
-				passed search site: {{ searchSite }} <br>
-				passed search total results count: {{ totalResults }} <br>
-				passed searchResultArray: {{ searchResultArray }} <br>
+				results:search term: {{ searchTerm }} <br>
+				results:search site: {{ searchSite }} <br>
+				results:total results: {{ totalResults }} <br>
+				results:returned results: {{ returnedResults }} <br>
+
+				<table>
+					<!-- CONFIRMED PLAYERS -->
+					<tbody>
+						<tr style="background-color:#007649" ><td colspan = "2"><h3 style="color:#ffffff">Results</h3></td></tr>
+					</tbody>
+					<tbody>
+						{{#each resultsArray}} 
+		                    <tr>
+								<td>{{userLogin}}, {{title}}</td>
+								<td><img src={{userAvatarLink}} alt="" align="right"/></td>
+							</tr>
+		                {{/each}}
+					</tbody>
+				</table>
+
+
+
+				 
+
+
+
+
 
 			</section>
 		</div>					
