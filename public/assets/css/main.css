@@ -1,0 +1,9 @@
+body {
+font-family: 'Roboto', sans-serif;
+}
+.header-image img {
+    width:175px;
+}
+footer {
+    margin-top:100px;
+}
