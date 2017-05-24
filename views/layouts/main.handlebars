@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>doFindMe - find developers</title>
+        <title>DevQuest.io - Find developers talking about anything</title>
 
         <meta name="description" content="DigitalOcean find me" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="/assets/css/main.css" /> 
 
     </head>
@@ -15,7 +16,7 @@
             <header id="header">
                 <div class="content">
                     
-                    <!-- Menu Nav  -->
+                    <!-- Menu Nav  
                     <div class="dropdown">
                         <div align="right">
                             <button onclick="myFunction()" class="dropbtn">Menu</button>
@@ -25,13 +26,19 @@
                               </div>
                         </div>
                     </div>
-
+-->
                     <!-- Header Image   -->
-                    <div align="left">
+                    <div align="center">
                         <a href="#">
-                            <div class="header-image"><img src="/images/devquest.png"></div> 
+                            <div class="header-image"><a href="/"><img src="/images/devquest.png"></a></div> 
                         </a>
-                    <p>header check 1<br/></p>
+                        <form id='form' action='/search' method='GET'>
+                            
+                            <input name="searchsite" id="searchsite" type="hidden" />
+                            <label align="left">Search Term <span id='search_term_Label'></span></label>
+                            <input name="searchterm" id="searchterm" type="" />
+                              <button style="padding: 0px 20px;">Search</button>
+                        </form>
                     </div>
             </header>
 
@@ -42,10 +49,9 @@
 
         <!-- Footer -->
             <footer id="footer">
-                <ul class="icons">
-                    <li><a href="https://twitter.com/digitalocean" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                </ul>
-                <p class="copyright">&copy; <a href="http://www.digitalocean.com"> DigitalOcean LLC.</a> <br></p>
+                <div align="center">
+                <p class="copyright">&copy; 2017 <a href="http://www.digitalocean.com"> DigitalOcean</a> <br></p>
+                </div>
             </footer>
 
         <!-- Scripts -->
