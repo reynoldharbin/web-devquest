@@ -1,6 +1,6 @@
-//  Created by Reynold Harbin on 5/24/16.
-//  Copyright © 2017 DigitalOcean, LLC. All rights reserved.
-//
+// created by Reynold Harbin on 5/24/17
+// reynold@digitalocean.com
+
 
 var logTag = "config-web.js:";
 
