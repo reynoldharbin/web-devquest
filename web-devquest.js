@@ -127,7 +127,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 			if (body) {
 				//check resultsMeta //meta about the results, like searchSite, searchTerm, resultsAvailable
 				res.render('results', { //generate eventfullUserConfirmed.html
-					searchTerm: sterm,
+					searchTerm: searchTerm,
 					searchSite: ssite,
 					totalResults: stotalResultsCount,
 					returnedResults: sreturnedReturnedCount,
