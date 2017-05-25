@@ -7,7 +7,7 @@ var exphbs = require('express-handlebars');
 var _ = require('underscore');
 var request = require('request');
 var app = express();
-var PORT = process.env.port || 8080;
+var PORT = process.env.port || 80;
 var prefix = '/dofindme/';
 
 //other code
@@ -53,6 +53,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	// 1. An widget to input the search term
 	// 2. A selector for which developer sites (gihub, stackexchange, others) to search
 	// 3. A search results table
+
 
 	// captured input should populate these variables
 	var searchTerm = req.query.searchterm;
