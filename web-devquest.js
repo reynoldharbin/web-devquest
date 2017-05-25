@@ -54,9 +54,14 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	// 2. A selector for which developer sites (gihub, stackexchange, others) to search
 	// 3. A search results table
 
-	// captured input should populate these variables
+	// captured input should populate these variables	
 
-	var searchTerm = req.body.searchterm;
+	if (req.searchTerm == null) {
+		var searchTerm = "AWS c3.xlarge";
+	} else {
+		var searchTerm = req.searchTerm;
+	}
+
 	var searchSiteArray = [];
 	searchSiteArray.push("github"); //at least one developer site, but array can have as many as the max sites where we have integrated the sites search API
 	searchSiteArray.push("stackexchange");
