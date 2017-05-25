@@ -138,6 +138,7 @@ footer {
 }
 .avatar_img {
   width:75px;
+  border-radius: 50%;
 }
 .avatar_cell {
     width:85px;
