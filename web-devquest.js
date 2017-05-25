@@ -7,7 +7,7 @@ var exphbs = require('express-handlebars');
 var _ = require('underscore');
 var request = require('request');
 var app = express();
-var PORT = process.env.port || 8080;
+var PORT = process.env.port || 80;
 var prefix = '/dofindme/';
 
 //other code
