@@ -14,14 +14,13 @@
 				<table class="results">
 					<!-- CONFIRMED PLAYERS -->
 					<tbody>
-						<tr style="background-color:#0078ff" ><td colspan = "3"><h3 style="color:#ffffff">Results</h3></td></tr>
+						<tr style="background-color:#0078ff" ><td colspan = "2"><h3 style="color:#ffffff">{{ totalResults }} Results</h3></td></tr>
 					</tbody>
 					<tbody>
 						{{#each resultsArray}} 
 		                    <tr>
-								<td><img src={{userAvatarLink}} alt="" class="avatar_img" align="left"/></td>
-								<td><a href={{userLink}}>{{userLogin}}</a></td>
-								<td><a href={{pageLink}}>{{title}}</a> </td>
+								<td class="avatar_cell"><a href={{userLink}} alt="{{userLogin}}"><img src={{userAvatarLink}} alt="" class="avatar_img" align="left"/></a></td>
+								<td class="body_cell"><a href={{pageLink}}>{{title}}</a> </td>
 								
 							</tr>
 		                {{/each}}
