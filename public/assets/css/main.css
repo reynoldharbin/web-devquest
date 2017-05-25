@@ -213,3 +213,6 @@ footer {
 .index img {
     width:300px;
 }
+.highlight {
+    font-weight:bold;
+}
