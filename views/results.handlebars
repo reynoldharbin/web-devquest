@@ -1,6 +1,6 @@
 <!-- DETAIL -->
 <section id="two" class="wrapper">
-	<div class="inner alt"> 
+	<div class="inner alt">
 		<div class="content">
 			<section>
 				<p>DO results page looking for sammy
@@ -13,11 +13,13 @@
 
 				<table class="results">
 					<!-- CONFIRMED PLAYERS -->
+					<div class="results-count">
 					<tbody>
-						<tr style="background-color:#0078ff" ><td colspan = "2"><h3 style="color:#ffffff">{{ totalResults }} Results</h3></td></tr>
+						<tr style="font-size: 20px; font-family: proxima nova, sans-serif; color:#666;" ><td colspan = "2">{{ totalResults }} Results</td></tr>
 					</tbody>
+				</div>
 					<tbody>
-						{{#each resultsArray}} 
+						{{#each resultsArray}}
 		                    <tr class="result_row">
 								<td class="avatar_cell">
 								<div class="avatar_row">
@@ -32,8 +34,8 @@
 								</a>
 								</div>
 								</td>
-								<td class="body_cell"><a href="{{pageLink}}"  target="_blank"><strong>{{title}}</strong></a> <br/> {{issueBody}} </td>
-								
+								<td class="body_cell"><a href="{{pageLink}}"  target="_blank"><div class="results-title">{{title}}</div></a> <br/> {{issueBody}} </td>
+
 							</tr>
 		                {{/each}}
 					</tbody>
@@ -41,14 +43,13 @@
 
 
 
-				 
+
 
 
 
 
 
 			</section>
-		</div>					
-	</div>		
+		</div>
+	</div>
 </section>
-		
