@@ -56,7 +56,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 
 
 	// captured input should populate these variables
-	var searchTerm = req.query.searchterm;;
+	var searchTerm = req.query.searchterm;
 	var searchSiteArray = [];
 	searchSiteArray.push("github"); //at least one developer site, but array can have as many as the max sites where we have integrated the sites search API
 	searchSiteArray.push("stackexchange");
@@ -76,8 +76,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 
 	console.log(logTag+"search:calling APIUrl: "+findmeAPIUrl);
 
-	//curl -i -X POST 
-		// -H 'Content-Type: application/json'
+
 		
 	var requestBody = {};
     requestBody.searchterm = searchTerm;
@@ -93,10 +92,10 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	        'X-Application-Id': config.apikeys.doFindMeAppId,  //future
 	        'X-REST-API-Key': config.apikeys.doFindMeClientAppId //future
 	    	},
-	    //body: '{"searchterm":"searhTerm", "searchsite":"github", "searchsitearray":"[github]"}'
+	    
 		body: JSON.stringify(requestBody)
 
-	    // -d '{"searchterm":"AWS EC2 Security Groups", "searchsite":"github"}' http://localhost:3000/search
+	   
 
 
 	}, function(error, response, body){
