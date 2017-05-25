@@ -11,7 +11,7 @@
 				results:total results: {{ totalResults }} <br>
 				results:returned results: {{ returnedResults }} <br>
 
-				<table>
+				<table class="results">
 					<!-- CONFIRMED PLAYERS -->
 					<tbody>
 						<tr style="background-color:#0078ff" ><td colspan = "3"><h3 style="color:#ffffff">Results</h3></td></tr>
@@ -22,7 +22,7 @@
 								
 								<td><a href={{userLink}}>{{userLogin}}</a></td>
 								<td><a href={{pageLink}}>{{title}}</a> </td>
-								<td><img src={{userAvatarLink}} alt="" align="right"/></td>
+								<td><img src={{userAvatarLink}} alt="" class="avatar_img" align="right"/></td>
 							</tr>
 		                {{/each}}
 					</tbody>

@@ -7,7 +7,7 @@ var exphbs = require('express-handlebars');
 var _ = require('underscore');
 var request = require('request');
 var app = express();
-var PORT = process.env.port || 8080;
+var PORT = process.env.port || 80;
 var prefix = '/dofindme/';
 
 //other code
@@ -54,9 +54,14 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	// 2. A selector for which developer sites (gihub, stackexchange, others) to search
 	// 3. A search results table
 
-	// captured input should populate these variables
+	// captured input should populate these variables	
 
-	var searchTerm = 'AWS EC2 Security Groups';
+	if (req.searchTerm == null) {
+		var searchTerm = "AWS c3.xlarge";
+	} else {
+		var searchTerm = req.searchTerm;
+	}
+
 	var searchSiteArray = [];
 	searchSiteArray.push("github"); //at least one developer site, but array can have as many as the max sites where we have integrated the sites search API
 	searchSiteArray.push("stackexchange");
@@ -87,7 +92,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	        'X-Application-Id': config.apikeys.doFindMeAppId,  //future
 	        'X-REST-API-Key': config.apikeys.doFindMeClientAppId //future
 	    	},
-	    body: '{"searchterm":"AWS EC2 Security Groups", "searchsite":"github", "searchsitearray":"[github]"}' //Set the body as a string
+	    body: '{"searchterm":"searchTerm", "searchsite":"github", "searchsitearray":"[github]"}' //Set the body as a string
 
 	    // -d '{"searchterm":"AWS EC2 Security Groups", "searchsite":"github"}' http://localhost:3000/search
 
