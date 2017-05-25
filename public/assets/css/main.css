@@ -188,3 +188,21 @@ footer {
     height: 170px;
     vertical-align: top;
 }
+.more button {
+    overflow: visible;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 220px;
+    font: bold 15px/40px 'proxima nova', 'lucida sans', 'Tahoma';
+    color: #07841e;
+    text-transform: uppercase;
+    background: #71ef94;
+    border-radius: 0 3px 3px 0;
+    
+}
+.more {
+    width:100%;
+    text-align:center;
+}
