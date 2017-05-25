@@ -129,7 +129,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 				res.render('results', { //generate eventfullUserConfirmed.html
 					searchTerm: searchTerm,
 					searchSite: ssite,
-					totalResults: stotalResultsCount,
+					totalResults: numberWithCommas(stotalResultsCount),
 					returnedResults: sreturnedReturnedCount,
 					resultsArray: sresultsarray
 
@@ -145,6 +145,10 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	})
 });
 
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 app.use(express.static(__dirname + '/public'));
 console.log(__dirname);
