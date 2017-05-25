@@ -27,7 +27,7 @@
         <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
     </head>
-    <body id="top">
+    <body id="top" onload="focusSearch()">
         <!-- Header -->
             <header id="header">
                 <div class="content">
@@ -96,6 +96,9 @@
                   }
                 }
               }
+            }
+            function focusSearch(){
+                document.getElementById("searchterm").focus();
             }
             </script>
             <!-- Drop Down Menu END -->
