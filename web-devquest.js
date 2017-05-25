@@ -55,8 +55,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	// 3. A search results table
 
 	// captured input should populate these variables
-
-	var searchTerm = req.body.searchterm;
+	var searchTerm = req.query.searchterm;;
 	var searchSiteArray = [];
 	searchSiteArray.push("github"); //at least one developer site, but array can have as many as the max sites where we have integrated the sites search API
 	searchSiteArray.push("stackexchange");
@@ -87,7 +86,7 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	        'X-Application-Id': config.apikeys.doFindMeAppId,  //future
 	        'X-REST-API-Key': config.apikeys.doFindMeClientAppId //future
 	    	},
-	    body: '{"searchterm":"searchTerm", "searchsite":"github", "searchsitearray":"[github]"}' //Set the body as a string
+	    body: {"searchterm":searchTerm, "searchsite":"github", "searchsitearray":"[github]"} 
 
 	    // -d '{"searchterm":"AWS EC2 Security Groups", "searchsite":"github"}' http://localhost:3000/search
 
@@ -144,6 +143,6 @@ console.log(__dirname);
 
 app.listen(PORT, function(){
 	console.log("******************************************************");
-	console.log("**--> doFind.me web server started on port:" + PORT);
+	console.log("**--> DevQuest.io web server started on port:" + PORT);
 	console.log("");
 });
