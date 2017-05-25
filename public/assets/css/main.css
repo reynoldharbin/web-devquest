@@ -172,6 +172,7 @@ footer {
   color: #000;
   font-weight: bold;
   text-decoration: none;
+  margin-top: 18px;
 }
 
 .results-title:hover {
@@ -185,4 +186,5 @@ footer {
 .result_row  {
     padding-bottom:15px;
     height: 170px;
+    vertical-align: top;
 }
