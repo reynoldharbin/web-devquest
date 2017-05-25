@@ -54,14 +54,9 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	// 2. A selector for which developer sites (gihub, stackexchange, others) to search
 	// 3. A search results table
 
-	// captured input should populate these variables	
 
-	if (req.searchTerm == null) {
-		var searchTerm = "AWS c3.xlarge";
-	} else {
-		var searchTerm = req.searchTerm;
-	}
-
+	// captured input should populate these variables
+	var searchTerm = req.query.searchterm;
 	var searchSiteArray = [];
 	searchSiteArray.push("github"); //at least one developer site, but array can have as many as the max sites where we have integrated the sites search API
 	searchSiteArray.push("stackexchange");
@@ -76,12 +71,17 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 		console.log(logTag+"search:with searchTerm: "+searchTerm);
 	} else {
 		console.log(logTag+"search:nil searchTerm");
+		res.render('index');
 	}
 
 	console.log(logTag+"search:calling APIUrl: "+findmeAPIUrl);
 
-	//curl -i -X POST 
-		// -H 'Content-Type: application/json' 
+
+		
+	var requestBody = {};
+    requestBody.searchterm = searchTerm;
+    requestBody.searchsite = "github";
+    requestBody.searchsitearray = searchSiteArray;
 		
 	request({
 		url: findmeAPIUrl, 
@@ -92,15 +92,17 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	        'X-Application-Id': config.apikeys.doFindMeAppId,  //future
 	        'X-REST-API-Key': config.apikeys.doFindMeClientAppId //future
 	    	},
-	    body: '{"searchterm":"searchTerm", "searchsite":"github", "searchsitearray":"[github]"}' //Set the body as a string
+	    
+		body: JSON.stringify(requestBody)
 
-	    // -d '{"searchterm":"AWS EC2 Security Groups", "searchsite":"github"}' http://localhost:3000/search
+	   
 
 
 	}, function(error, response, body){
 		if (error){
-			console.log(logTag+"search:unable to search with error:"+JSON.stringify(error));
-			res.render('error'); 
+			console.log("search:unable to search with error:"+JSON.stringify(body));
+			res.render('error');
+			
 		} else {
 			
 			var responseStatusCode = response.statusCode;
@@ -149,6 +151,6 @@ console.log(__dirname);
 
 app.listen(PORT, function(){
 	console.log("******************************************************");
-	console.log("**--> doFind.me web server started on port:" + PORT);
+	console.log("**--> DevQuest.io web server started on port:" + PORT);
 	console.log("");
 });
