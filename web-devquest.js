@@ -18,11 +18,11 @@ var actions = require('./actions-web.js');
 var logTag = "web-devquest.js:";
 
 if (config.build.forProduction) {
-	console.log(logTag + "initializing for development environment.");
-	var findmeAPIUrl = config.settings.devAPIUrl;
-} else {
 	console.log(logTag + "initializing for production environment.");
 	var findmeAPIUrl = config.settings.prodAPIUrl;
+} else {
+	console.log(logTag + "initializing for development environment.");
+	var findmeAPIUrl = config.settings.devAPIUrl;
 };
 
 //use handlebars templating engine
