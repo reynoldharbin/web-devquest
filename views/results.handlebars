@@ -18,8 +18,20 @@
 					</tbody>
 					<tbody>
 						{{#each resultsArray}} 
-		                    <tr>
-								<td class="avatar_cell"><a href={{userLink}} alt="{{userLogin}}" target="_blank"><img src={{userAvatarLink}} alt="" class="avatar_img" align="left"/></a></td>
+		                    <tr class="result_row">
+								<td class="avatar_cell">
+								<div class="avatar_row">
+								<img src={{userAvatarLink}} alt="" class="avatar_img" align="left"/>
+								</div>
+								<div class="avatar_row">
+								<a href={{userLink}} alt="{{userLogin}}" target="_blank">
+								<i class="fa fa-github" aria-hidden="true"></i>
+								</a>
+								<a href="mailto:user@example.org">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								</a>
+								</div>
+								</td>
 								<td class="body_cell"><a href="{{pageLink}}"  target="_blank"><strong>{{title}}</strong></a> - {{issueBody}} </td>
 								
 							</tr>
