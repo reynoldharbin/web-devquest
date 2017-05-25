@@ -11,6 +11,7 @@ padding: 0px;
   position: absolute;
   margin: 0px;
   height: 300px;
+  top:0px;
 }
 
 .cf:before, .cf:after{
@@ -131,4 +132,11 @@ padding: 0px;
 }
 footer {
     margin-top:100px;
+}
+.results {
+  padding-top:200px;
+  width:100%;
+}
+.avatar_img {
+  width:75px;
 }
