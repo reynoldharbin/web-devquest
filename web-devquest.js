@@ -95,9 +95,6 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 	    
 		body: JSON.stringify(requestBody)
 
-	   
-
-
 	}, function(error, response, body){
 		if (error){
 			console.log("search:unable to search with error:"+JSON.stringify(body));
@@ -107,24 +104,33 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 			
 			var responseStatusCode = response.statusCode;
 			var responseHeaders = response.headers;
-			var bodyObject = JSON.parse(body);
-			console.log("ZOO:0:"+logTag+"search:with body.searchTerm:"+bodyObject.searchTerm);
-			console.log("ZOO:1:"+logTag+"search:with body.totalResultsCount:"+bodyObject.totalResultsCount);
-			console.log("ZOO:2:"+logTag+"search:with body.itemsReturnedCount:"+bodyObject.itemsReturnedCount);
-			//console.log("ZOO:3:"+logTag+"search:with body:"+body);
-
-			//set up variables to send into the view //RMH-HERE-99-NOW
-			var sterm = body.searchTerm, 
-				ssite = "github",
-				stotalResultsCount = bodyObject.totalResultsCount,
-				sreturnedReturnedCount = bodyObject.itemsReturnedCount,  
-				sresultsperpage = bodyObject.resultsPerPage,
-				
-				stotalpages = bodyObject.totalPages,
-				scurrentpage = bodyObject.currentPage, 
-				sresultsarray = bodyObject.resultsArray;
 
 			if (body) {
+				console.log("ZOO:00:"+logTag+"search:with body:"+body);
+				var bodyObject = JSON.parse(body);
+
+				if (bodyObject.searchTerm){
+					console.log("ZOO:01:"+logTag+"search:with body.searchTerm:"+bodyObject.searchTerm);
+				}
+				if (bodyObject.totalResultsCount){
+					console.log("ZOO:1:"+logTag+"search:with body.totalResultsCount:"+bodyObject.totalResultsCount);
+				}
+				if (bodyObject.itemsReturnedCount){
+					console.log("ZOO:2:"+logTag+"search:with body.itemsReturnedCount:"+bodyObject.itemsReturnedCount);
+				}
+
+				//set up variables to send into the view //RMH-HERE-99-NOW
+				var sterm = body.searchTerm, 
+					ssite = "github",
+					stotalResultsCount = bodyObject.totalResultsCount,
+					sreturnedReturnedCount = bodyObject.itemsReturnedCount,  
+					sresultsperpage = bodyObject.resultsPerPage,
+					
+					stotalpages = bodyObject.totalPages,
+					scurrentpage = bodyObject.currentPage, 
+					sresultsarray = bodyObject.resultsArray;
+
+
 				//check resultsMeta //meta about the results, like searchSite, searchTerm, resultsAvailable
 				res.render('results', { //generate eventfullUserConfirmed.html
 					searchTerm: searchTerm,
@@ -135,8 +141,6 @@ app.get('/search', function (req, res) { //was app.get('/search/:site', function
 
 
 				});
-
-
 			} else {
 				console.log("ERROR:"+logTag+"nil searchResult...");
 				res.render('error'); 
@@ -155,6 +159,6 @@ console.log(__dirname);
 
 app.listen(PORT, function(){
 	console.log("******************************************************");
-	console.log("**--> DevQuest.io web server started on port:" + PORT);
+	console.log("**--> DevQuest.io Web server started on port:" + PORT);
 	console.log("");
 });

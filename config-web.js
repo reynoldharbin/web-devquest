@@ -5,15 +5,15 @@
 var logTag = "config-web.js:";
 
 exports.apikeys  = {
-    doFindMeAppId: "doFindMeAppId-AdkfRdd5$",
-    doFindMeClientAppId: "doFindMeClientAppId-AdjfAdaD(08*",
+    doFindMeAppId: "devQuestWebAppId-AdkfRdd5$",
+    doFindMeClientAppId: "devQuestWeb-AdjfAdaD(08*",
 	mixPanelToken: "randomStringFromMixPanel-p",
 	devMixPanelToken: "randomStringFromMixPanel-d"
 }
 
 exports.build  = {
-  forProduction: true,
-  forDevelopment: false
+  forProduction: false,
+  forDevelopment: true
 }
 
 exports.settings  = {
